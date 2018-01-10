@@ -11,16 +11,16 @@
 // Returns
 //
 // [
-//   "Make",
-//   "Make a",
-//   "Make a killer",
-//   "Make a killer impression",
-//   "a",
-//   "a killer",
-//   "a killer impression",
-//   "killer",
-//   "killer impression",
-//   "impression",
+//   "Make", 0
+//   "Make a", 01
+//   "Make a killer", 012
+//   "Make a killer impression", 0123
+//   "a", 1
+//   "a killer", 12
+//   "a killer impression", 123
+//   "killer", 2
+//   "killer impression", 23
+//   "impression", 3
 // ]
 
 str = "Make a killer impression"
