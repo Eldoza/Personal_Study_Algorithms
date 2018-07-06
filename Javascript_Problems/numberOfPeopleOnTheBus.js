@@ -22,7 +22,7 @@ const number = (busStops) => {
   const reducer = (accum, currentVal) => accum + currentVal
 
   busStops.forEach(stop => onBus.push(stop[0]))
-  busStops.forEach( stop => offBus.push(stop[1]))
+  busStops.forEach(stop => offBus.push(stop[1]))
   const finalPeopleOn = onBus.reduce(reducer)
   const finalPeopleOff = offBus.reduce(reducer)
   return finalPeopleOn - finalPeopleOff
