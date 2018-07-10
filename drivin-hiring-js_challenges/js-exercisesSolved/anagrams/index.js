@@ -9,6 +9,14 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
+  const normalizedStrA = stringA.toLowerCase().split('').sort().join('').trim()
+  const normalizedStrB = stringB.toLowerCase().split('').sort().join('').trim()
+
+  if(normalizedStrA === normalizedStrB){
+    return true
+  } else {
+    return false
+  }
 }
 
 module.exports = anagrams;
