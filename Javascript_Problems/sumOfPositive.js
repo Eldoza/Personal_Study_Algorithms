@@ -24,4 +24,4 @@ function positiveSum(arr) {
 }
 
 
-arr.filter(num => Math.sign(num) === 1)
+arr.filter(num => Math.sign(num) === 1).reduce((a, b) => a + b, 0)

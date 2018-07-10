@@ -16,14 +16,11 @@
 // [[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]] should return 17
 // [[3,0],[9,1],[4,8],[12,2],[6,1],[7,8]] should return 21
 
-const number = (busStops) => {
-  const onBus = []
-  const offBus = []
+const busPeople = (busStops) => {
   const reducer = (accum, currentVal) => accum + currentVal
 
-  busStops.forEach(stop => onBus.push(stop[0]))
-  busStops.forEach(stop => offBus.push(stop[1]))
-  const finalPeopleOn = onBus.reduce(reducer)
-  const finalPeopleOff = offBus.reduce(reducer)
-  return finalPeopleOn - finalPeopleOff
+  const onBus = busStops.map( stop => stop[0]).reduce(reducer)
+  const offBus = busStops.map(stop => stop[1]).reduce(reducer)
+
+  return onBus - offBus
 }
