@@ -11,12 +11,8 @@
 function anagrams(stringA, stringB) {
   const normalizedStrA = stringA.toLowerCase().split('').sort().join('').trim()
   const normalizedStrB = stringB.toLowerCase().split('').sort().join('').trim()
-
-  if(normalizedStrA === normalizedStrB){
-    return true
-  } else {
-    return false
-  }
+  const isAnagram = normalizedStrA === normalizedStrB ? true : false
+  return isAnagram
 }
 
 module.exports = anagrams;

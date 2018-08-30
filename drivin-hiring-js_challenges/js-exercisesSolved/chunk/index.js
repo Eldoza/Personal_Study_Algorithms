@@ -8,6 +8,19 @@
 // chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
-function chunk(array, size) {}
+function chunk(array, size) {
+  // var slicedArr = []
+  // for (var i = 0; i < array.length; i+= size){
+  //   slicedArr.push(array.slice(i, i + size))
+  // }
+  // return slicedArr
+
+  //Faster benchmark for larger data sets
+  var slicedArr = []
+  while ( array.length){
+    slicedArr.push(array.splice(0, size))
+  }
+  return slicedArr
+}
 
 module.exports = chunk;
