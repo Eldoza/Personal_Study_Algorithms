@@ -62,9 +62,7 @@ function goodVsEvil(good, evil){
   }
 
   const goodKeys = Object.keys(goodSideMap)
-  const goodValues = Object.values(goodSideMap)
   const badKeys = Object.keys(badSideMap)
-  const badValues = Object.values(badSideMap)
 
  const finalGoodScoreMap = Object.assign(...goodKeys.map((key, index) => {
   return {

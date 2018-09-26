@@ -23,24 +23,21 @@
 //   "impression", 3
 // ]
 
-str = "Make a killer impression"
+var str = "Make a killer impression"
 
-function nGram(str) {
-  var convertedText = str.split(" ");
-  var gramArr = []
-  for (var i = 0; i < convertedText.length; i++){
-    var tempArr = []
-    var slicedItemArr = convertedText.slice(0, i + 1)
-
-    for(var j = i; j < slicedItemArr.length; j++){
-      var slicedGram = slicedItemArr.slice(0, i + 1)
-      tempArr.push(slicedGram.join(' '))
-      var gramToPush = tempArr[0]
+function nGram (str) {
+  let splitArr = str.split(' ')
+  let arrLength = splitArr.length
+  let finalArr = []
+  let gram 
+  for (let i = 0; i < arrLength; i++ ){
+    for (let j = i; j < arrLength; j++){
+       gram = splitArr.slice(j, j + 1)
+      finalArr.push(gram)
     }
-
-    gramArr.push(gramToPush)
-  }
-  return gramArr
+    
+  }   
+  return finalArr
 }
 
 console.log(nGram(str))
