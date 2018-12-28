@@ -7,7 +7,7 @@ function returnMissingNumbers (numbers) {
   const uniqueNums = [...new Set(sortedNums)]
   let missingNums = []
 
-  for(let i = 1; i < numbers.length; i++){
+  for (let i = 1; i < numbers.length; i++){
     if(uniqueNums.indexOf(i) === -1) {
       missingNums.push(i)
     }
@@ -16,3 +16,5 @@ function returnMissingNumbers (numbers) {
 }
 
 console.log('answerrrr ===>', returnMissingNumbers(coolArr))
+
+groups.items

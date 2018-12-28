@@ -23,21 +23,21 @@
 //   "impression", 3
 // ]
 
-var str = "Make a killer impression"
+var strToUse = "Make a killer impression"
 
 function nGram (str) {
   let splitArr = str.split(' ')
   let arrLength = splitArr.length
   let finalArr = []
-  let gram 
-  for (let i = 0; i < arrLength; i++ ){
-    for (let j = i; j < arrLength; j++){
-       gram = splitArr.slice(j, j + 1)
-      finalArr.push(gram)
-    }
-    
-  }   
+  
+  for (let i = 0; i < arrLength; i++){
+    let gram
+   for (var j = i; j < arrLength; j++){
+     
+      finalArr.push(splitArr[i])
+   }
+  }
   return finalArr
 }
 
-console.log(nGram(str))
+console.log(nGram(strToUse))
