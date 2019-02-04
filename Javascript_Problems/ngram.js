@@ -11,33 +11,50 @@
 // Returns
 //
 // [
-//   "Make", 0
-//   "Make a", 01
-//   "Make a killer", 012
-//   "Make a killer impression", 0123
-//   "a", 1
-//   "a killer", 12
-//   "a killer impression", 123
-//   "killer", 2
-//   "killer impression", 23
-//   "impression", 3
+//   "Make", 
+//   "Make a", 
+//   "Make a killer", 
+//   "Make a killer impression", 
+//   "a", 
+//   "a killer", 
+//   "a killer impression", 
+//   "killer",
+//   "killer impression", 
+//   "impression", 
 // ]
 
 var str = "Make a killer impression"
 
-function nGram (str) {
-  let splitArr = str.split(' ')
-  let arrLength = splitArr.length
-  let finalArr = []
-  let gram 
-  for (let i = 0; i < arrLength; i++ ){
-    for (let j = i; j < arrLength; j++){
-       gram = splitArr.slice(j, j + 1)
-      finalArr.push(gram)
-    }
+// function nGram (str) {
+//   let splitArr = str.split(' ')
+//   let arrLength = splitArr.length
+//   let finalArr = []
+//   let gram 
+//   for (let i = 0; i < arrLength; i++ ){
+//     for (let j = i; j < arrLength; j++){
+//        gram = splitArr.slice(j, j + 1)
+//       finalArr.push(gram)
+//     }
     
-  }   
-  return finalArr
+//   }   
+//   return finalArr
+// }
+let nGrams = string => {
+  let stringToArray = string.replace(/[^\w\s]/gi, '').split(' ');
+  let result = []
+  for (i = 0; i < stringToArray.length; i++) {
+    let wordsRemaining = stringToArray.length;
+    let nGramArray = []
+    while (wordsRemaining > 0) {
+      let killerCombo = stringToArray.slice(i, wordsRemaining).join(' ');
+      killerCombo !== "" && nGramArray.push(killerCombo);
+      wordsRemaining = wordsRemaining - 1;
+    }
+    nGramArray.reverse().forEach(element => result.push(element));
+  }
+  console.log(result);
 }
 
-console.log(nGram(str))
+nGrams('Make a killer impression.');
+
+// console.log(nGrams(str))
