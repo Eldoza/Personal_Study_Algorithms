@@ -81,7 +81,7 @@ function goodVsEvil(good, evil){
   const finalGoodScore = finalGoodScoreArr.reduce((a, b) => a + b)
   const finalBadScore = finalBadScoreArr.reduce((a, b) => a + b)
 
-  if( finalGoodScore > finalBadScore){
+  if ( finalGoodScore > finalBadScore){
     return "Battle Result: Good triumphs over Evil"
   } else if ( finalBadScore > finalGoodScore) {
     return "Battle Result: Evil eradicates all trace of Good"

@@ -23,7 +23,7 @@
 //   "impression", 
 // ]
 
-var str = "Make a killer impression"
+var strToUse = "Make a killer impression"
 
 // function nGram (str) {
 //   let splitArr = str.split(' ')
