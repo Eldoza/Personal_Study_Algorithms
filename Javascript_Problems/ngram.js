@@ -1,4 +1,4 @@
-// Charlie N-Grams Code Challenge
+// N-Grams Code Challenge
 //
 // This is a small programming problem to test your technical ability and coding style. Use the programming language of your choice.
 //
@@ -11,50 +11,30 @@
 // Returns
 //
 // [
-//   "Make", 
-//   "Make a", 
-//   "Make a killer", 
-//   "Make a killer impression", 
-//   "a", 
-//   "a killer", 
-//   "a killer impression", 
+//   "Make",
+//   "Make a",
+//   "Make a killer",
+//   "Make a killer impression",
+//   "a",
+//   "a killer",
+//   "a killer impression",
 //   "killer",
-//   "killer impression", 
-//   "impression", 
+//   "killer impression",
+//   "impression",
 // ]
 
-var strToUse = "Make a killer impression"
+const createNGram = (nGramString) => {
+  const stringsArr = nGramString.split(" ");
+  const stringsArrLength = stringsArr.length;
+  let ngramsArray = [];
 
-// function nGram (str) {
-//   let splitArr = str.split(' ')
-//   let arrLength = splitArr.length
-//   let finalArr = []
-//   let gram 
-//   for (let i = 0; i < arrLength; i++ ){
-//     for (let j = i; j < arrLength; j++){
-//        gram = splitArr.slice(j, j + 1)
-//       finalArr.push(gram)
-//     }
-    
-//   }   
-//   return finalArr
-// }
-let nGrams = string => {
-  let stringToArray = string.replace(/[^\w\s]/gi, '').split(' ');
-  let result = []
-  for (i = 0; i < stringToArray.length; i++) {
-    let wordsRemaining = stringToArray.length;
-    let nGramArray = []
-    while (wordsRemaining > 0) {
-      let killerCombo = stringToArray.slice(i, wordsRemaining).join(' ');
-      killerCombo !== "" && nGramArray.push(killerCombo);
-      wordsRemaining = wordsRemaining - 1;
+  for (let i = 0; i < stringsArrLength; i++) {
+    for (let j = 1; j < stringsArrLength + 1; j++) {
+      ngramsArray.push(stringsArr.slice(i, j).join(" "));
     }
-    nGramArray.reverse().forEach(element => result.push(element));
   }
-  console.log(result);
-}
+  return ngramsArray.filter((word) => word.trim() !== "");
+};
 
-nGrams('Make a killer impression.');
-
-// console.log(nGrams(str))
+const stringToGram = "Make a killer impression this is it.";
+console.log(createNGram(stringToGram));
